@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORDIX PW-Manager</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body>
+    <header>
+        <h1> Welcome Daniel 👋</h1>
+        <h3> These are your passwords! </h3>
+    </header>
+
+    <div class="container">
+        {% if credentials%}
+            {% for credential in credentials %}
+            <div class="item">
+		    <p class="item-title">{{ credential.title }}</p>
+                <div class="credentials">
+			<p>Username: {{ credential.username }}</p>
+			<p>Password: {{ credential.password}}</p>
+			<p>URL: {{ credential.url }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="no-item">
+                <p>NO ITEMS</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
