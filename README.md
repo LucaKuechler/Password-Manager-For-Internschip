@@ -6,14 +6,14 @@
 ```
 $ python --version
 ```
-* If python is not installed, install it from this [website](https://www.python.org/downloads/release/python-3810/)
+* If python is not installed, install it from this [website](https://www.python.org/downloads/release/python-3810/).
 * ℹ Choose the advanced installation to enable pip.
 
 2. Check if git is installed.
 ```
 $ git --verison
 ```
-* If git is not installed, install it from this [website](https://gitforwindows.org/)
+* If git is not installed, install it from this [website](https://gitforwindows.org/).
 
 3. Open a terminal in your prefered folder for coding projects.
 
@@ -34,7 +34,7 @@ $ pip install -r requirements.txt
 
 7. Change into the src folder.
 ```
-cd src
+$ cd src
 ```
 
 8. Execute the pyhton script for the first time.
