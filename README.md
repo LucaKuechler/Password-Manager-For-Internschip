@@ -13,7 +13,7 @@ $ python --version
 ```
 $ git --verison
 ```
-If git is not installed, install it from this (website)[https://gitforwindows.org/]
+* If git is not installed, install it from this (website)[https://gitforwindows.org/]
 
 3. Open a terminal in your prefered folder for coding projects.
 
@@ -41,7 +41,7 @@ cd src
 ```
 $ python main.py
 ```
-⚠ Do not close the terminal!
+* ⚠ Do not close the terminal!
 
 9. Open http://127.0.0.1:3333/ inside your internet browser.
 
