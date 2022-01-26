@@ -6,8 +6,8 @@
 ```
 $ python --version
 ```
-If python is not installed, install it from this (website)[https://www.python.org/downloads/release/python-3810/]
-ℹ Choose the advanced installation to enable pip.
+* If python is not installed, install it from this (website)[https://www.python.org/downloads/release/python-3810/]
+* ℹ Choose the advanced installation to enable pip.
 
 2. Check if git is installed.
 ```
