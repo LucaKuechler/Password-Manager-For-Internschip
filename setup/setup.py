@@ -8,15 +8,23 @@
 import sqlite3
 import csv
 import os.path
+from cryptography.fernet import Fernet
+import base64
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
+import os
+import getpass
 
 
-def read_csv_file(fdata: str):
+def read_csv_file(fdata: str, f):
     listdata = []
     with open(fdata, mode = "r") as csvfile:
         csvReader = csv.reader(csvfile, delimiter=";")
         for row in csvReader:
+            token = f.encrypt(bytes(row[2], encoding="ascii"))
+            row[2] = token
             listdata.append(row)
-            print(row)
+            print (row)
     return listdata
 
 
@@ -54,17 +62,32 @@ def insert_csv_data(conn, csv_data):
     conn.commit()
     conn.close()
 
+def crypt():
+    password = getpass.getpass(prompt="Passwort: ", stream=None)
+    s = b"hallo"
+    kdf = PBKDF2HMAC(
+        algorithm=hashes.SHA256(),
+        length=32,
+        salt=s,
+        iterations=390000
+        )
+    key = base64.urlsafe_b64encode(kdf.derive(bytes(password, encoding="ascii")))
+    f = Fernet(key)
+    return f
+
 
 
 def main() -> None:
-    csv_data = read_csv_file("data.csv")
+    
+    f = crypt()
+
+    csv_data = read_csv_file("data.csv", f)
 
     conn = connect_to_db("../src/pwdatabase.db")
 
     create_table(conn)
     
     insert_csv_data(conn, csv_data)
-
 
 if __name__ == '__main__':
     main()
