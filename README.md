@@ -1,4 +1,4 @@
-# Praktikum_2022_Feb
+# Password Manager For Internschip
 <img src="docs/app.png" height="200px" width="auto">
 
 ## Setup:
@@ -19,12 +19,12 @@ $ git --verison
 
 4. Clone the repository.
 ```
-$ git clone https://github.com/LucaKuechler/Praktikum_2022_Feb.git
+$ git clone https://github.com/LucaKuechler/Password-Manager-For-Internschip.git
 ```
 
 5. Change into the downloaded folder.
 ```
-$ cd Praktikum_2022_Feb
+$ cd Password-Manager-For-Internschip
 ```
 
 6. Install all python dependencies.
