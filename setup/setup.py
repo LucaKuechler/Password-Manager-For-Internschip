@@ -23,7 +23,7 @@ def create_table(conn):
     """Create a table where title, username, password and the url can be stored."""
 
 
-def insert_csv_data(conn):
+def insert_csv_data(conn, csv_data):
     """Insert the csv data in the database table."""
 
 
